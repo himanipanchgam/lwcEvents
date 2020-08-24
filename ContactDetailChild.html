@@ -1,47 +1,47 @@
 <template>
-<lightning-card title="Contact table" icon-name="standard:contact">
-<table class="slds-table slds-table_cell-buffer slds-table_bordered">
-	<thead>
-		<tr class="slds-line-height_reset">
-			<th class="" scope="col">
-				<div class="slds-truncate" title="Name">Name</div>
-			</th>
-			<th class="" scope="col">
-		             <div class="slds-truncate" title="Account Name">Account Name</div>
-			</th>
-			<th class="" scope="col">
-				<div class="slds-truncate" title="Phone">Phone</div>
-			</th>
-<th class="" scope="col">
-				<div class="slds-truncate" title="Email">Email</div>
-</th>
-		</tr>
-	</thead>
-	<tbody>
-		<template for:each={data} for:item="con">
-		<tr key={con.Id}>
-		<th scope="col">
-			<div>{con.Name}</div>
-		</th>
-	<!--Fire event when Account name is clicked -->
-	<th scope="col">
-	<a href="javascript:void(0);" data-dev-id={con.AccountId} onclick={handleChange}>
-	<lightning-formatted-text value={con.Account.Name} linkify></lightning-formatted-text>
-	</a>
-	</th>
-	<th scope="col">
-<div>
-		<lightning-formatted-phone value={con.Phone}></lightning-formatted-phone>
-</div>
-	</th>
-<th scope="col">
-	<div>
-		<lightning-formatted-email value={con.Email}></lightning-formatted-email>
-	</div>
-</th>
-</tr>
-</template>
-</tbody>
-</table>
-</lightning-card>
+    <lightning-card title="Contact table" icon-name="standard:contact">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Email">Email</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={data} for:item="con">
+                    <tr key={con.Id}>
+                        <th scope="col">
+                            <div>{con.Name}</div>
+                        </th>
+                        <!--Fire event when Account name is clicked -->
+                        <th scope="col">
+                            <a href="javascript:void(0);" data-dev-id={con.AccountId} onclick={handleChange}>
+                                <lightning-formatted-text value={con.Account.Name} linkify></lightning-formatted-text>
+                            </a>
+                        </th>
+                        <th scope="col">
+                            <div>
+                                <lightning-formatted-phone value={con.Phone}></lightning-formatted-phone>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div>
+                                <lightning-formatted-email value={con.Email}></lightning-formatted-email>
+                            </div>
+                        </th>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
 </template>
