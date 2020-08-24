@@ -1,0 +1,13 @@
+<template>
+    <template if:true={data.Id}>
+    <lightning-card title={data.Name} icon-name="standard:account">
+            <div>
+                Type: {data.Type}</br>
+                Annual Revenue: {data.AnnualRevenue}</br>
+                Website: {data.Website}
+            </div>
+    </lightning-card>
+    </template>
+    <!-- Call child component, handle event onselect -->
+    <c-contact-detail-child onselect={handleSelect}></c-contact-detail-child>
+</template>
